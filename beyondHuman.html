@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&display=swap" rel="stylesheet">
+    <title></title>
+    <style>
+    body {
+        background-image: url(./imgs/window.jpg);
+        background-size: cover;
+    }
+
+    #notice-text {
+        font-family: 'Raleway Dots', cursive;
+        font-size: 50px;
+        position: absolute;
+        color: white;
+    }
+
+
+    #notice {
+        color: yellow;
+    }
+
+
+    .icon {
+        opacity: 0;
+        color: white;
+        padding-top: 10px;
+        font-family: 'Raleway Dots', cursive;
+        font-size: 40px;
+        width: 300px;
+        height: 300px;
+        background-size: contain;
+        animation-name: open-close;
+        background-position: center;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        transition: 0.5s;
+        /*              border-radius:50%;
+*/
+        position: relative;
+        /*  left:0px
+                top:0px;*/
+        transition: 2s;
+        background-repeat: no-repeat;
+        text-align: center;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+
+
+
+    #fungus {
+        background-image: url(./imgs/mushroom.png);
+    }
+
+    #milkweed {
+        background-image: url(./imgs/milkweed.png);
+
+    }
+    </style>
+</head>
+
+<body>
+    <div id="notice-text">
+        <p>What do you <span id=notice>notice</span> walking down the city streets or in the park? This is what I see.</p>
+    </div>
+    <a href="./milkweed/index.html">
+        <div id="milkweed" class="icon"></div>
+    </a>
+    <a href="./fungus/index.html">
+        <div id="fungus" class="icon"></div>
+    </a>
+    <a href="./insects/index.html">
+        <div id="insects" class="icon"></div>
+    </a>
+    <a href="./snails/index.html">
+        <div id="snails" class="icon"></div>
+    </a>
+    <a href="./geese/index.html">
+        <div id="snails" class="icon"></div>
+    </a>
+
+    <a href="./perspective/index.html">
+        <div id="snails" class="icon"></div>
+    </a>
+    <script>
+    var icon = document.getElementsByClassName("icon");
+    var notice = document.getElementById("notice");
+
+    function iconPositionFlicker() {
+        for (var i = 0; i < icon.length; i++) {
+            icon[i].style.left = Math.random() * 500 + "px";
+            icon[i].style.top = Math.random() * 400 + "px";
+            icon[i].style.opacity = Math.random() * 1;
+
+
+        }
+
+    };
+
+    setInterval(iconPositionFlicker, 2000);
+
+
+    // document.getElementById("notice");
+
+    // notice.addEventListener(
+    //     "click",
+    //     function() {
+    //         setInterval(iconPosition, 2000);
+    //         setInterval(flicker, 300);
+    //     })
+    </script>
+</body>
+
+</html>

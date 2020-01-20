@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&display=swap" rel="stylesheet">
+    <style>
+    .text {
+        font-family: 'Raleway Dots', cursive;
+        font-size: 100px;
+        top: 0%;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+    
+    }
+
+    #body {
+        background-color: black;
+        background-image: url("./shadows/imgs/feet.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transition: 0.1s;
+/*        background-size:contain;
+*/    }
+
+#eye{
+    background-image: url('./imgs/blinking-eye.gif');
+    width:300px;
+    height:90px;
+    background-size:contain;
+    background-repeat: repeat;
+    position:relative;
+    left:70%;
+    top:60%;
+    z-index: 10;
+    opacity:0.5;
+
+
+}
+
+    #text2 {
+        color: yellow;
+    }
+
+
+    #text3 {
+        font-size: 50px;
+    }
+
+    @keyframes image-change {
+
+        0% {
+            background-image: url("./shadows/imgs/feet.jpg");
+        }
+
+        15% {
+            background-image: url("./shadows/imgs/1.jpg");
+
+        }
+
+        30% {
+            background-image: url("./shadows/imgs/2.jpg");
+
+        }
+
+        45% {
+            background-image: url("./shadows/imgs/3.jpg");
+
+        }
+
+        60% {
+            background-image: url("./shadows/imgs/4.jpg");
+
+        }
+
+        75% {
+            background-image: url("./shadows/imgs/5.jpg");
+
+        }
+
+        90% {
+            background-image: url("./shadows/imgs/6.jpg");
+
+        }
+
+        100% {
+            background-image: url("./shadows/imgs/feet.jpg");
+
+        }
+
+    }
+    </style>
+</head>
+
+<body id="body">
+    <audio loop id="dance" src="dance6c.mp3"></audio>
+    <div id="text1" class='text'>
+        <p>Marvelous things happen when you <div class="text" id="text2"><i>see the world.</div></i></p>
+            <a href="newYork.html"><div id="eye"></div></a>
+
+    </div>
+
+
+    <script>
+    var dance = document.getElementById("dance");
+
+    var text2 = document.getElementById("text2");
+    var body = document.getElementById("body");
+
+    text2.addEventListener("click",
+        function() {
+            dance.play();
+            body.style.animationName = "image-change";
+
+        });
+    </script>
+</body>
+
+</html>

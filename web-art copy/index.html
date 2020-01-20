@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots&display=swap" rel="stylesheet">
+    <style type="text/css">
+    body {
+        margin: 0;
+        background-color: white;
+    }
+
+    #text{
+        font-family: 'Raleway Dots', cursive;
+                font-size: 100px;
+                background-color:rgba(255, 255, 255, 0.7);
+
+    }
+
+    .header {
+                width: 100%;
+        left:5%;
+        height: 800px;
+        position:absolute;
+        background-size: contain;
+        background-image:url(leaf2.gif);
+        background-repeat: no-repeat;
+
+
+    }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <audio controls loop allow="autoplay" id="dream-song" src="dream-song.m4a"></audio>
+    
+
+
+    <div id='text' class="header">Do you see the leaves around you?</div>
+
+
+    
+    <script type="text/javascript">
+    var dreamSong = document.getElementById("dream-song");
+    var dream = document.getElementById("text");
+
+
+    function makeImage(i) {
+
+        var image = document.createElement("div")
+        document.body.appendChild(image);
+
+        image.style.transition = "5s";
+        // image.style.backgroundColor="blue";
+        image.style.backgroundImage = "url(leaf" + i + ".gif)";
+        image.style.backgroundSize = "contain";
+        image.style.backgroundRepeat = "no-repeat";
+
+        // image.style.backgroundColor = 'rgb(' + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
+        image.style.display = "inline-block";
+        image.style.position = "relative";
+
+        function setPosition() {
+            image.style.left = Math.round(Math.random() * Math.random() * 400) + "px";
+            image.style.top = Math.round(Math.random() * Math.random() * 100) + "px";
+        };
+
+        function changeOpacity() {
+            image.style.opacity = Math.random() * 1;
+
+        }
+
+
+
+        function setSize() {
+            image.style.width = Math.round(Math.random() * 400 + 100) + "px";
+            image.style.height = image.style.width;
+        }
+
+
+        setInterval(setPosition, 3000);
+        setInterval(changeOpacity, 300);
+        setInterval(setSize, 2000);
+
+
+
+
+    }
+
+    // function headerOpacity() {
+    //     dream.style.opacity = Math.random() * 1;
+
+    // }
+
+    // setInterval(headerOpacity, 300);
+
+
+
+
+    document.addEventListener("click", function() {
+        dreamSong.play();
+        text.classList.remove("header");
+        for (var i = 1; i < 6; i = i + 1) { makeImage(i) }
+
+
+
+    });
+    </script>
+</body>
+
+</html>

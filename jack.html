@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Break</title>
+
+	<style type="text/css">
+		#dog{
+
+			background-image:url(https://i.ytimg.com/vi/xK4PZWjGtKY/maxresdefault.jpg);
+			background-size: contain;
+		}
+
+		#jesus{
+
+			background-image:url(https://www.jesuschristsavior.net/Savior.jpeg);
+			background-size: contain;
+
+		}
+
+	</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	
+var jesus
+jesus = document.createElement(jesus)
+jesus.style.position = "absolute";
+jesus.style.left = "80px";
+jesus.style.top = "200px"
+jesus.style.width = "100px"
+jesus.style.height = "100px"
+jesus.id = "jesus"
+
+
+	var mousePosition;
+var offset = [0,0];
+var dog;
+var isDown = false;
+
+dog = document.createElement("dog");
+dog.style.position = "absolute";
+dog.style.left = "500px";
+dog.style.top = "200px";
+dog.style.width = "100px";
+dog.style.height = "100px";
+dog.style.color = "blue";
+dog.id = "dog";
+
+
+document.body.appendChild(dog);
+
+dog.addEventListener('mousedown', function(e) {
+    isDown = true;
+    offset = [
+        dog.offsetLeft - e.clientX,
+        dog.offsetTop - e.clientY
+    ];
+}, true);
+
+document.addEventListener('mouseup', function() {
+    isDown = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+    event.preventDefault();
+    if (isDown) {
+        mousePosition = {
+
+            x : event.clientX,
+            y : event.clientY
+
+        };
+        dog.style.left = (mousePosition.x + offset[0]) + 'px';
+        dog.style.top  = (mousePosition.y + offset[1]) + 'px';
+    }
+}, true);
+
+</script>
+
+</body>
+</html>
